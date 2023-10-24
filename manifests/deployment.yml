@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: htmlwebsite 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: htmlwebsite
+  template:
+    metadata:
+      labels:
+        app: htmlwebsite 
+    spec:
+      containers:
+        - name: htmlwebsite 
+          image: proacr.azurecr.io/htmlwebsite
+          ports:
+          - containerPort: 80
